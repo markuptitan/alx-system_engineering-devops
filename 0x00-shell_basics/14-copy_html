@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -1 --ignore-backups | grep '\.html$' | xargs -I {} bash -c 'if [ "{}" -nt "../{}" ]; then cp -u "{}" "../{}"; fi'
+ls -1 --ignore-backups | grep '\.html$' | xargs -I {} rsync -u "{}" "../{}"
